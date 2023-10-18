@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+.experiencesSection{
+  background-color: $Background-body;
+  padding: 2rem;
+
+  .sectionTitle{
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+
+  .experiencesList{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @media screen and (max-width: $screen-md) {
+      justify-content: center ;
+    }
+  }
+}

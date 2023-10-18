@@ -1,0 +1,44 @@
+{
+  "name": "equipo10.front",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.1.4",
+    "antd": "^5.5.2",
+    "axios": "^1.4.0",
+    "classnames": "^2.3.2",
+    "date-fns": "^2.30.0",
+    "jwt-decode": "^3.1.2",
+    "prop-types": "^15.8.1",
+    "ramda": "^0.29.0",
+    "ramda-adjunct": "^4.0.0",
+    "react": "^18.2.0",
+    "react-date-range": "^1.4.0",
+    "react-datepicker": "^4.14.1",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.43.9",
+    "react-icons": "^4.9.0",
+    "react-router-dom": "^6.11.1",
+    "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/ramda": "^0.29.1",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.3.4",
+    "vite": "^4.3.2"
+  }
+}

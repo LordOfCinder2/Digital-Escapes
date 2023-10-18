@@ -1,0 +1,17 @@
+# .gitlab-ci.yml
+
+# Define stages for the pipeline
+stages:
+  - build
+
+# Define job for building the React Vite project
+build:
+  stage: build
+  image: node:latest  # Use the Node.js Docker image
+  script:
+    - cd Frontend/equipo10.front  # Navigate to the project directory
+    - npm ci  # Install project dependencies
+    - npm run build  # Build the React Vite project
+  artifacts:
+    paths:
+      - Frontend/equipo10.front/dist/  # Archive the built project as an artifact

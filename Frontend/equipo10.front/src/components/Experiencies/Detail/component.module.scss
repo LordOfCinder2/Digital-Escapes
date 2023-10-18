@@ -1,0 +1,197 @@
+@import "../../../styles/variables.scss";
+
+.detailSection {
+
+  .navBackButton {
+    padding: 16px;
+    background-color: $Mind-green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title {
+      font-size: 24px;
+      font-weight: 800;
+    }
+    .backButton {
+      padding: 12px;
+      border-radius: $button-radius;
+      cursor: pointer;
+      text-decoration: none;
+      background-color: $Ligth-green;
+      color: $Blackish-green;
+    }
+  }
+
+  .mainDetailContainer {
+    display: flex;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: $screen-md) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img{
+      border-radius: $card-radius;
+      @media screen and (max-width: $screen-md) {
+        border-radius: 0%;
+      }
+    }
+
+    .gridcontainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      width: 80%;
+      margin:40px 10px 0px 40px;
+
+      .imgTotal{
+        display: none;
+        @media screen and (max-width: $screen-md) {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          position: absolute;
+          bottom: 40%;
+          right: 10px;
+          padding: 5px 10px;
+          color: white;
+          font-weight: 700;
+        }
+      }
+
+      .column {
+        width: 100%;
+        height: 100%;
+      }
+      
+      .grid2x2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 10px;
+
+        @media screen and (max-width: $screen-md) {
+          display: none;
+        }
+      }
+      
+      .item {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        
+        .lastItem{
+          width: 100%;
+          height: 100%;
+          position: relative;
+        }
+
+        .overlay{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          color: white;
+          padding-bottom: 15px;
+          padding-right: 20px;
+          font-weight: 700;
+        }
+      }
+
+      @media screen and (max-width: $screen-md) {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .bookingForm{
+      width: 20%;
+      margin-right: 40px;
+    }
+  }
+
+  .descriptionContainer{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    
+    h2{
+      font-size: 32px;
+      font-weight: 700;
+    }
+    .price{
+      color: $Slamon;
+      margin-left: 8px;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      width: 80%;
+    }
+  }
+
+  .ratingContainer{
+    margin-left: 40px;
+    margin-bottom: 30px;
+
+    .ratingBox{
+      
+      input[type="radio"]{
+        display: none;
+      }
+
+      .star{
+        cursor: pointer;
+        transition: color 200ms;
+      }
+
+      .sendButton{
+        position: absolute;
+        margin-top: 3px;
+        background-color: $Mind-green;
+        border-radius: 10px;
+        padding: 5px 10px;
+        margin-left: 20px;
+        cursor: pointer;
+      }
+    }
+
+    hr{
+      border: 0;
+      clear:both;
+      display:block;
+      width: 97%;          
+      background-color:$Blackish-green;
+      height: 1px;
+      opacity: 0.25;
+    }
+
+    h2{
+      font-size: 20px;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    .message{
+      display: flex;
+      justify-content: center;
+      margin: 12px 0;
+      
+      p{
+        font-size: 24px;
+        color: $Blackish-green;
+        font-weight: 600;
+      }
+    }
+
+    .resena{
+      text-decoration: underline;
+      color: $Slamon;
+      margin-top: 10px;
+    }
+    
+  }
+
+}

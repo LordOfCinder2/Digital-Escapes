@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.panelSection{
+  display: flex;
+  min-height: 762.66px;
+
+  .adminMenu{
+    width: 25%;
+    background-color: $Dark-grey;
+    padding: 16px;
+
+    h1{
+      font-size: 22px;
+      color: $Neutral-white;
+      margin-bottom: 16px;
+    }
+  }
+  
+  .outletRoutes{
+    width: 75%;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../../styles/variables.scss";
+
+.modal{
+  top: 0;
+  z-index: 1000;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  opacity: 0.5;
+  background-color: gray;
+}

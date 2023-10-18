@@ -1,0 +1,104 @@
+@import "../../../../styles/variables.scss";
+
+.addExperienceSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1{
+    font-size: 22px;
+    color: $Blackish-green;
+    font-weight: 600;
+  }
+
+  .goBackButton{
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+    border-radius: $button-radius;
+    background-color: $Mind-green;
+    cursor: pointer;
+  }
+
+  .formContainer{
+    width: 40%;
+    margin: 24px 0;
+
+    @media screen and (max-width: $screen-mo) {
+      width: 60%;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      width: 80%;
+    }
+
+    .fields{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: 16px 0;
+
+      label{
+        font-size: 18px;
+        color: $Blackish-green;
+        font-weight: 600;
+      }
+
+      input, textarea, select{
+        border: 1px solid $Blackish-green;
+        border-radius: $card-radius;
+        margin: 16px 0 0 0;
+        padding: 10px;
+        line-height: 20px;
+      }
+
+      .errorFlag{
+        color: $Slamon;
+      }
+
+      .addCategoryButton{
+        display: flex;
+        justify-content: flex-end;
+        border-radius:8px;
+        background-color: $Blackish-green;
+        width: fit-content;
+        padding: 7px 14px;
+        align-self: flex-end;
+        color: white;
+        margin-top:10px;
+      }
+    }
+
+    .buttonContainer{
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+
+      .submitButton{
+        background: $Mind-green;
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        padding: 16px 24px;
+        width: 50%;
+        cursor: pointer;
+
+        &:disabled{
+          background-color: $Pastel-grey;
+        }
+      }
+    }
+
+    .message{
+      display: flex;
+      justify-content: center;
+      margin: 12px 0;
+      
+      p{
+        font-size: 24px;
+        color: $Slamon;
+        font-weight: 600;
+      }
+    }
+  }
+}

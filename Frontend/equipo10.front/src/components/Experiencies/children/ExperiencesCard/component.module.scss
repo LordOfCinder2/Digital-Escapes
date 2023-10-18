@@ -1,0 +1,109 @@
+@import "../../../../styles/variables.scss";
+
+.experienceCard{
+  display: flex;
+  width: calc(50% - 1rem);
+  border-radius: $card-radius;
+  overflow: hidden;
+  height: 300px;
+  background-color: $Neutral-white;
+  -webkit-box-shadow: 0px 0px 11px 0px rgba(114,114,114,0.37); 
+  box-shadow: 0px 0px 11px 0px rgba(114,114,114,0.37);
+
+  @media screen and (max-width: $screen-md) {
+    width: calc(100% - 1rem);
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media (min-width: $screen-md) and (max-width: $screen-mo) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imgCard{
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+
+    .imgToRender{
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    @media screen and (max-width: $screen-sm) {
+      width: 100%;
+    }
+
+    @media (min-width: $screen-md) and (max-width: $screen-mo) {
+      width: 100%;
+    }
+  }
+
+  .description{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 16px;
+    width: 50%;
+
+    @media screen and (max-width: $screen-sm) {
+      width: 100%;
+    }
+
+    @media (min-width: $screen-md) and (max-width: $screen-mo) {
+      width: 100%;
+    }
+
+    .title{
+      display: flex;
+      justify-content: space-between;
+      h2{
+        color: $Blackish-green;
+        font-size: 32px;
+        font-weight: 600;
+          @media screen and (max-width: $screen-mo) {
+            font-size: 24px;
+          }
+      }
+      .price{
+        color: $Slamon;
+        font-size: 24px;
+        font-weight: 500;
+        @media screen and (max-width: $screen-sm) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .location{
+      font-size: 22px;
+      font-weight: 600;
+      i{
+        color: $Blackish-green;
+        font-size: 20px;
+      }
+    }
+
+    .textDescription{
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4; 
+      -webkit-box-orient: vertical;
+    }
+
+    .seeMore{
+      border-radius: $button-radius;
+      background-color: $Mind-green;
+      cursor: pointer;
+      color: $Blackish-green;
+      font-weight: 600;
+      padding: 16px;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+}

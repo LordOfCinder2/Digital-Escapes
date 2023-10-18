@@ -1,0 +1,53 @@
+@import "../../../styles/variables.scss";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: $Mind-green;
+  padding: 16px;
+
+  @media screen and (max-width: $screen-sm) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (max-width: $screen-md) {
+    position: inherit;
+  }
+
+  .logoCopyright{
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $screen-sm) {
+      align-items: center;
+    }
+
+    .logoContainer {
+      width: 120px;
+      height: auto;
+  
+      .logoFooter {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .socialMedia {
+    display: flex;
+    align-items: center;
+    color: $Blackish-green;
+
+    @media screen and (max-width: $screen-sm) {
+      margin-top: 32px;
+    }
+
+    i {
+      font-size: 32px;
+      margin: 0 8px;
+      cursor: pointer;
+    }
+  }
+}

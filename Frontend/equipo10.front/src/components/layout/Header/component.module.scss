@@ -1,0 +1,102 @@
+@import "../../../styles/variables.scss";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: $Neutral-white;
+  padding: 16px;
+  z-index: 999; 
+
+  .logoHeader {
+    @media screen and (max-width: $screen-sm) {
+      width: 90%;
+      height: 95%;
+    }
+    width: 320px;
+    height: 60px;
+  }
+
+  .actionsButtons {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media screen and (max-width: $screen-md) {
+      display: none;
+      visibility: hidden;
+    }
+
+    .welcomeMsg {
+      font-size: 16px;
+      font-weight: 600;
+      margin-right: 32px;
+    }
+
+    .link-nav-login {
+      padding: 16px 24px;
+      border-radius: 8px;
+      color: $Blackish-green;
+      text-decoration: none;
+    }
+
+    .link-nav-signup {
+      background: $Blackish-green;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      padding: 16px 24px;
+      cursor: pointer;
+    }
+  }
+
+  .mobile {
+    display: none;
+    visibility: hidden;
+
+    @media screen and (max-width: $screen-md) {
+      display: block;
+      visibility: visible;
+    }
+
+    i {
+      font-size: 40px;
+    }
+
+    .menuMobile {
+      display: flex;
+      flex-direction: column;
+      background-color: $Ligth-green;
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      transition: right 0.5s ease;
+      z-index: 9999;
+
+      .welcomeMsgMobile {
+        font-size: 16px;
+        font-weight: 600;
+        margin-right: 32px;
+        text-align: center;
+      }
+
+      .links {
+        text-decoration: none;
+        margin-top: 16px;
+        background-color: $Mind-green;
+        color: $Neutral-white;
+        padding: 16px 0;
+        font-size: 20px;
+      }
+    }
+
+    .menuMobile.open {
+      right: 0;
+    }
+  }
+}

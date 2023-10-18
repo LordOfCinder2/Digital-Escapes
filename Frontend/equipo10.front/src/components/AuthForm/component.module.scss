@@ -1,0 +1,139 @@
+@import "../../styles/variables.scss";
+
+.addExperienceSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  .experienceImage{
+    height: 740px;
+    margin-right: 5%;
+
+    @media screen and (max-width: $screen-mo) {
+      display: none;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      display: none;
+    }
+  }
+
+  .formContainer {
+    width: 40%;
+    margin: 24px 0;
+
+    @media screen and (max-width: $screen-mo) {
+      width: 60%;
+    }
+
+    @media screen and (max-width: $screen-md) {
+      width: 80%;
+    }
+
+    .fields {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: 16px 0;
+
+      label {
+        font-size: 18px;
+        color: $Blackish-green;
+        font-weight: 600;
+      }
+
+      input,
+      textarea,
+      select {
+        border: 1px solid $Blackish-green;
+        border-radius: $card-radius;
+        margin: 16px 0 0 0;
+        padding: 10px;
+        line-height: 20px;
+      }
+
+      .signUp{
+        font-weight: 700;
+        font-size: 40px;
+        margin-bottom: 16px;
+      }
+
+      .signUpDescrip{
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 40px;
+      }
+
+      .errorFlag {
+        color: $Slamon;
+      }
+
+      &:disabled {
+        background-color: $Pastel-grey;
+      }
+    }
+
+    .terms{
+      margin-top: 28px;  
+
+      .termsSpan{
+        margin-left: 10px;
+      }
+
+      .termsAndConditions{
+        text-decoration: none;
+        color: $Slamon;
+      }
+    }
+
+    .buttonContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+
+      .submitButton {
+        background: $Mind-green;
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+        padding: 16px 24px;
+        width: 50%;
+        cursor: pointer;
+
+        &:disabled {
+          background-color: $Pastel-grey;
+        }
+      }
+
+      .link {
+        text-decoration: none;
+        color: $Blackish-green;
+        margin-top: 16px;
+      }
+
+    }
+
+    .message {
+      display: flex;
+      justify-content: center;
+      margin: 12px 0;
+
+      .error{
+        color: $Slamon;
+      }
+
+      p {
+        font-size: 24px;
+        color: $Blackish-green;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+  }
+
+  .resendMail{
+    margin-top: 15px;
+    text-align: center;
+  }
+}

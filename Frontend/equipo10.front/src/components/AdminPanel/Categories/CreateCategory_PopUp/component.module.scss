@@ -1,0 +1,103 @@
+@import "../../../../styles/variables.scss";
+
+.popup{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner {
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    .addCategorySection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      
+        h1{
+          font-size: 22px;
+          color: $Blackish-green;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+
+        .fields{
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 10px;
+          width: 60%;
+    
+          h2{
+            font-size: 18px;
+            color: $Blackish-green;
+            font-weight: 400;
+          }
+    
+          input, textarea, select{
+            border: 1px solid $Blackish-green;
+            border-radius: $card-radius;
+            padding: 10px;
+            line-height: 20px;
+          }
+    
+          .errorFlag{
+            color: $Slamon;
+          }    
+      
+        }
+
+        .buttonContainer{
+          display: flex;
+          justify-content: center;
+          margin-top: 20px;
+    
+          .submitButton{
+            background: $Mind-green;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            padding: 16px 24px;
+            width: 100%;
+            cursor: pointer;
+    
+            &:disabled{
+              background-color: $Pastel-grey;
+            }
+          }
+        }
+        .message{
+          display: flex;
+          justify-content: center;
+          margin: 12px 0;
+          
+          p{
+            font-size: 24px;
+            color: $Blackish-green;
+            font-weight: 600;
+          }
+        }
+      }
+
+    .close-btn{
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background-color: rgb(230, 34, 77);
+        color: white;
+        border-radius: 5px;
+        padding: 5px;
+    }
+}
+

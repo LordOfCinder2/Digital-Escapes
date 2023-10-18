@@ -1,0 +1,80 @@
+@import "../../../styles/variables.scss";
+
+.bookingContainer{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  h1{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .bookingForm{
+    background-color: $Pastel-grey;
+    height: 500px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 10px 40px;
+    border-radius: 12px;
+  
+    h2{
+      font-size: 24px;
+      color: $Neutral-white;
+      font-weight: 600;
+      display: inline-block;
+    }
+  
+    label{
+      font-weight: 500;
+      margin-right: 12px;
+    }
+  
+    .calendarInput{
+      border-radius: 5px;
+      padding: 10px ;
+      margin-top: 10px;
+    }
+  
+    .buttonContainer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+  
+      .validateButton{
+        background-color: $Mind-green;
+        color: $Background-body;
+        font-size: 18px;
+        font-weight: 500;
+        height: auto;
+        width: 40%;
+        margin-bottom: 12px;
+      }
+  
+      .cancelButton{
+        background-color: $Dark-grey;
+        color: $Background-body;
+        font-size: 18px;
+        font-weight: 500;
+        height: auto;
+        width: 40%;
+      }
+    }
+  
+  
+  }
+}
+
+.ant-modal-body{
+  
+  .modaltext{
+    font-size: 18px;
+  }
+
+}
+

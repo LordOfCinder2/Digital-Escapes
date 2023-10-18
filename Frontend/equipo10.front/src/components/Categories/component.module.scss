@@ -1,0 +1,34 @@
+@import "../../styles/variables.scss";
+
+
+
+.categoriesSection{
+  background-color: $Ligth-green;
+  padding: 2rem;
+
+  .sectionTitle{
+    font-size: 24px;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+
+  .categoriesList{
+    :global{
+      .ant-carousel {
+        width: 90%;
+        margin: auto;
+      }
+      .slick-slider {
+        width: auto;
+        padding: 0;
+      }
+      .slick-prev{
+        left: -35px;
+      }
+      .slick-next, .slick-prev{
+        font-size: 30px;
+        color: currentColor;
+      } 
+    }
+  }
+}

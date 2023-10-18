@@ -1,0 +1,76 @@
+@import "../../styles/variables.scss";
+
+.popup{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.popup-inner {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    .imgMain{
+        width: 100%;
+        height: 50vh;
+    }
+
+    .title{
+        color: $Slamon;
+        font-weight: 700;
+        font-size: 16px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .grid1x4{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        margin:10px;
+
+        .imgGrid {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .next-btn{
+        position: absolute;
+        top: 200px;
+        right: 16px;
+        color: white;
+        font-weight: bolder;
+        font-size: x-large;
+        background-color: $Mind-green;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        border: none;
+
+    }
+
+    .close-btn{
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        color: white;
+        font-weight: bolder;
+        font-size: x-large;
+        background-color: transparent;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+}

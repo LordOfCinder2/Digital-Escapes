@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.bookingForm{
+  background-color: $Pastel-grey;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+
+  h2{
+    font-size: 20px;
+    color: $Neutral-white;
+    font-weight: 600;
+  }
+
+  label{
+    font-weight: 500;
+  }
+
+  .calendarInput{
+    border-radius: 5px;
+    padding: 10px ;
+    margin-top: 10px;
+  }
+
+  .validateButton{
+    background-color: $Mind-green;
+    color: $Background-body;
+    font-size: 18px;
+    font-weight: 500;
+    height: auto;
+  }
+}

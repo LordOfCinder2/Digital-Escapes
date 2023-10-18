@@ -1,0 +1,45 @@
+@import "../../../../styles/variables.scss";
+
+.experienceCard{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  border-radius: $card-radius;
+  background-color: $Neutral-white;
+  -webkit-box-shadow: 0px 0px 11px 0px rgba(114,114,114,0.37); 
+  box-shadow: 0px 0px 11px 0px rgba(114,114,114,0.37);
+
+  &.cardSelected{
+    border: solid 2px $Slamon;
+    transition: border-color 0.3s ease;
+  }
+
+  .imgCard{
+    border-radius: $card-radius $card-radius 0 0;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    .imgToRender{
+      width: 100%;
+    }
+  }
+
+  .description{
+    padding: 16px;
+
+    .title{
+      font-size: 24px;
+      font-weight: 500;
+      color: $Blackish-green;
+      margin-bottom: 12px;
+    }
+
+    .quantity{
+      color: $Slamon;
+      font-weight: 500;
+    }
+  }
+}
+
+

@@ -1,0 +1,98 @@
+@import "../../../styles/variables.scss";
+
+.resendButton {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    color:$Dark-grey;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .resendButton:hover {
+    color: #1976d2;
+  }
+  
+  
+  .resendFormOverlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .resendFormContainer {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .closeButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .closeButton {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    color: #888;
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    color: #333;
+  }
+  
+  .resendForm {
+    margin-top: 20px;
+  }
+  
+  .resendForm label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .resendForm input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .resendForm input:focus {
+    outline: none;
+    border-color: #2196f3;
+  }
+  
+  .errorFlag {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .submitButton {
+    background-color:#8DD3BB;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submitButton:hover {
+    background-color: #a5d5a7;
+  }
+  

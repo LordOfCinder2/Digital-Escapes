@@ -1,0 +1,834 @@
+{
+	"info": {
+		"_postman_id": "eb4b7665-f76b-46b0-b690-42016bcebd1d",
+		"name": "Digital Escapes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Experience",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "All experiences",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"There is at least one data entry in the DB\", function () {\r",
+											"    const jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.length).not.to.eql(0);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "default"
+									}
+								],
+								"url": "{{Experience}}/all"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Single Non-Existing exp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error: The experience with the entered ID is not found in the DB\", function () {\r",
+											"    pm.response.to.have.body(\"La experiencia no existe en la base de datos\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{Experience}}/?id=1",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Single Existing exp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{Experience}}/?id=30",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "30"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Experience By Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{Experience}}/experienceName?expName=Patagonia",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										"experienceName"
+									],
+									"query": [
+										{
+											"key": "expName",
+											"value": "Patagonia"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Exp Non-Existing Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error: The experience with the entered name is not found in the DB\", function () {\r",
+											"    pm.response.to.have.body(\"La experiencia no existe en la base de datos\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{Experience}}/experienceName?expName=Nunca Jamas",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										"experienceName"
+									],
+									"query": [
+										{
+											"key": "expName",
+											"value": "Nunca Jamas"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Experience By Slug",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"There is at least one data entry in the DB\", function () {\r",
+											"    const jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.length).not.to.eql(0);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTUwNjcwMSwiaWF0IjoxNjg1NDg4NzAxfQ.6Nijfy4T4eYJtfrsipZmyRGvGbV9jj4Cr1FxLPrkNBFLzOdYOH3KOAACU-k817zFWpiR-XJ8bmhm3ayRRR4M4A",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{Experience}}/experienceSlug?slug=playa-del-carmen",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										"experienceSlug"
+									],
+									"query": [
+										{
+											"key": "slug",
+											"value": "playa-del-carmen"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Paginated",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"There is at least one data entry in the DB\", function () {\r",
+											"    const jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.length).not.to.eql(0);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "text"
+									}
+								],
+								"url": "{{Experience}}/allPaginated"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Add Exp with New Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+											"});\r",
+											"pm.test(\"Response time is less than 800ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(800);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Puerto del Mar\",\r\n        \"description\": \"Paradisíaca playa caribeña\",\r\n        \"imgUrl\": \"https://pi-g10.s3.us-west-1.amazonaws.com/images/1920px-Playa_del_Carmen_in_Mexico_(29725304248).jpg\",\r\n        \"price\": 300,\r\n        \"experienceSlug\": \"playa-del-mar-azul\",\r\n        \"category\": {\r\n            \"id\": 10\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{Experience}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Exp with Existing Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Error: The name of the experience is already in the DB\", function () {\r",
+											"    pm.response.to.have.status(409);\r",
+											"});\r",
+											"pm.test(\"Response time is less than 800ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(800);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Puerto del Mar Azul\",\r\n        \"description\": \"Paradisíaca playa caribeña\",\r\n        \"imgUrl\": \"https://pi-g10.s3.us-west-1.amazonaws.com/images/1920px-Playa_del_Carmen_in_Mexico_(29725304248).jpg\",\r\n        \"price\": 300,\r\n        \"experienceSlug\": \"playa-del-mar-azul\",\r\n        \"category\": {\r\n            \"id\": 10\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{Experience}}"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "Delete Experience",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Experiencia eliminada de la BD\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 700ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(700);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Experience}}/delete?id=50",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "50"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Non-Existing Exp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 800ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(800);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{Experience}}/delete?id=47",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "47"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "Update Exper imgUrl",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTUwNjcwMSwiaWF0IjoxNjg1NDg4NzAxfQ.6Nijfy4T4eYJtfrsipZmyRGvGbV9jj4Cr1FxLPrkNBFLzOdYOH3KOAACU-k817zFWpiR-XJ8bmhm3ayRRR4M4A",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"characteristicDTOSet\": [\r\n        {\"id\":1},\r\n        {\"id\":2}\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Experience}}?id=20",
+									"host": [
+										"{{Experience}}"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "20"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Add Existing Admin Account",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"The e-mail is already registered in DB\", function () {\r",
+											"    pm.response.to.have.status(409);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 800ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(800);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"natnat\",\r\n    \"username\": \"lordofcinder2\",\r\n    \"email\": \"matias.dilisa@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"apiUserRoles\": \"ADMIN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/users/addNewUser"
+							},
+							"response": []
+						},
+						{
+							"name": "Add User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"User was successfully created\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 800ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(800);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Nataly\",\r\n    \"username\": \"nattur\",\r\n    \"email\": \"natalyr73@hotmail.com\",\r\n    \"password\": \"123456\",\r\n    \"apiUserRoles\": \"USER\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/users/addNewUser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"addNewUser"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login Admin Attempt",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const jsonData = JSON.parse(responseBody);\r",
+											"const token = jsonData.jwt;\r",
+											"pm.environment.set(\"TOKEN\", `${token}`);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsb3Jkb2ZjaW5kZXIyIiwiZXhwIjoxNjg1MTY0NDYwLCJpYXQiOjE2ODUxNDY0NjB9.pXNOuhIKfwO6bMSEdXGx7crQ5u7QwFs_ICySffs4_LcS4up6ivft7FO3nliMmGBUoODgNnej8coHOB-HbFIlRQ",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"matias.dilisa@gmail.com\",\r\n    \"password\": \"123456\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/users/authenticate"
+							},
+							"response": []
+						},
+						{
+							"name": "Login UserAttempt",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 800ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(800);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJsb3Jkb2ZjaW5kZXIyIiwiZXhwIjoxNjg1MTY0NDYwLCJpYXQiOjE2ODUxNDY0NjB9.pXNOuhIKfwO6bMSEdXGx7crQ5u7QwFs_ICySffs4_LcS4up6ivft7FO3nliMmGBUoODgNnej8coHOB-HbFIlRQ",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"lordofcinder\",\r\n    \"password\": \"123456\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8080/users/authenticate"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "GetByUserName",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/users/user?email=matias.dilisa@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"user"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "matias.dilisa@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetAllUsers",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"There is at least one data entry in the DB\", function () {\r",
+											"    const jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.length).not.to.eql(0);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYXRpYXMuZGlsaXNhQGdtYWlsLmNvbSIsImV4cCI6MTY4NTY3MTgxMSwiaWF0IjoxNjg1NjUzODExfQ.0B52cXbCW-fdWknLJxIlqG3vO10nI2JT-QzStePAZSUHC3H7Q-XtSTPz5pUcLy90zk7Nz5qFnVdyaBFdlUKWAA",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:8080/users/all"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "Delete User",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/delete?id=4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

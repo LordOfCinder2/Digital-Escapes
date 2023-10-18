@@ -1,0 +1,133 @@
+@import "../../styles/variables.scss";
+
+.searchSection{
+
+    background-color: $Mind-green;
+    color: $Blackish-green;
+
+
+    .sectionTitle{
+        font-size: 28px;
+        margin-bottom: 25px;
+        font-weight: 600;
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .searchBar{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding-right: 5%;
+        padding-left: 5%;
+        font-size: 18px;
+
+        .destinationSection{
+            width: 50%;
+
+            .spanStyle{
+                padding-right: 80%;
+                padding-left: 1%;
+                font-weight: 500;
+            }
+
+            .searchField{
+                border: 1px solid #79747E;
+                border-radius: 4px;
+                width: 100%; 
+                margin-top: 5px;
+            } 
+
+            @media screen and (max-width: $screen-xs) {
+                width: 80%;
+                flex-flow: column;
+                align-items: center;
+                .spanStyle{padding: 0;}
+                margin-bottom: 4%;
+            }
+
+        }
+
+        .datesSection{
+            display: flex;
+            width: 50%;
+            margin-left: 16px;
+
+            .datesFields{
+                border: 1px solid #79747E;
+                border-radius: 4px;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+            .spanStyleDates{
+                margin-right: 50%;
+                padding-left: 1%;
+                font-weight: 500;
+            }
+
+            .checkIn{
+                width: 50%;
+                margin-right: 16px;
+                
+            }
+
+            .checkOut{
+                width: 50%;
+            }
+
+            input[type=date]{
+                color: gray;
+            }
+
+            @media screen and (max-width: $screen-xs) {
+                width: 80%;
+                flex-flow: column;
+                align-items: center;
+                .spanStyle{padding: 0;}
+                .checkIn{width: 100%;margin-left: 0;margin-bottom: 5%;}
+                .checkOut{width: 100%;margin-left: -4%;}
+            }
+
+        }
+
+        @media screen and (max-width: $screen-xs) {
+            width: 100%;
+            flex-flow: column;
+            align-items: center;
+            padding:0;
+            .spanStyle{margin: 0;}
+        }
+    }
+
+    .searchButtons{
+        display: flex;
+        justify-content: right;
+        flex-direction: row;
+        padding: 10px 5%;
+
+        .buttonCoupon{
+            cursor: pointer;
+            color:white;
+            background-color: $Mind-green;
+            font-weight: 500;
+            margin-right: 16px;
+        }
+
+        .searchButton{
+            cursor: pointer;
+            background-color: #79747E;
+            color: $Neutral-white;
+            border-radius: 4px;
+            border: 1px solid #79747E;
+            padding: 8px 16px;
+        }
+
+    }
+
+    @media screen and (max-width: $screen-md) {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}

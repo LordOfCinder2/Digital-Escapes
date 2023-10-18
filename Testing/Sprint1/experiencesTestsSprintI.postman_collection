@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "eb4b7665-f76b-46b0-b690-42016bcebd1d",
+		"name": "Digital Escapes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Experience",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "All experiences",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"There is at least one data entry in the DB\", function () {\r",
+											"    const jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.length).not.to.eql(0);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": "{{Experience}}/all"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Single Non-Existing exp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error: The experience with the entered ID is not found in the DB\", function () {\r",
+											"    pm.response.to.have.body(\"The experience does not exist in the DB\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Experience}}/?id=1",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Single Existing exp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Experience}}/?id=30",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "30"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Experience By Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Experience}}/experienceName?expName=Patagonia",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										"experienceName"
+									],
+									"query": [
+										{
+											"key": "expName",
+											"value": "Patagonia"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Exp Non-Existing Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Error: The experience with the entered name is not found in the DB\", function () {\r",
+											"    pm.response.to.have.body(\"The experience does not exist in the DB\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Experience}}/experienceName?expName=Nunca Jamas",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										"experienceName"
+									],
+									"query": [
+										{
+											"key": "expName",
+											"value": "Nunca Jamas"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Add Exp with New Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+											"});\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Puerto del Mar Azul\",\r\n        \"description\": \"Paradisíaca playa caribeña\",\r\n        \"imgUrl\": \"https://pi-g10.s3.us-west-1.amazonaws.com/images/1920px-Playa_del_Carmen_in_Mexico_(29725304248).jpg\",\r\n        \"price\": 300,\r\n        \"experienceSlug\": \"playa-del-mar-azul\",\r\n        \"category\": {\r\n            \"id\": 10\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{Experience}}"
+							},
+							"response": []
+						},
+						{
+							"name": "Add Exp with Existing Name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Error: The name of the experience is already in the DB\", function () {\r",
+											"    pm.response.to.have.status(409);\r",
+											"});\r",
+											"pm.test(\"Response time is less than 500ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"Puerto del Mar Azul\",\r\n        \"description\": \"Paradisíaca playa caribeña\",\r\n        \"imgUrl\": \"https://pi-g10.s3.us-west-1.amazonaws.com/images/1920px-Playa_del_Carmen_in_Mexico_(29725304248).jpg\",\r\n        \"price\": 300,\r\n        \"experienceSlug\": \"playa-del-mar-azul\",\r\n        \"category\": {\r\n            \"id\": 10\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{Experience}}"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "Delete Experience",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Experiencia eliminada de la BD\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 700ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(700);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Experience}}/delete?id=48",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "48"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Non-Existing Exp",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});\r",
+											"\r",
+											"\r",
+											"pm.test(\"Response time is less than 700ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(700);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Experience}}/delete?id=47",
+									"host": [
+										"{{Experience}}"
+									],
+									"path": [
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "47"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

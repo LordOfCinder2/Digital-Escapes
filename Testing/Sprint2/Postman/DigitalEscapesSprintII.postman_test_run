@@ -1,0 +1,481 @@
+{
+	"id": "fee055b4-11eb-4ac6-820c-f6c9e5f21f8b",
+	"name": "Digital Escapes",
+	"timestamp": "2023-06-01T21:38:48.702Z",
+	"collection_id": "0-eb4b7665-f76b-46b0-b690-42016bcebd1d",
+	"folder_id": 0,
+	"environment_id": "6323ecb4-06f5-4b6f-9290-fb8a1b711238",
+	"totalPass": 21,
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "eb718903-1808-47d1-ac3b-d05a1f5ca35d",
+			"name": "All experiences",
+			"url": "http://localhost:8080/experience/all",
+			"time": 1421,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"There is at least one data entry in the DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"There is at least one data entry in the DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1421
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"There is at least one data entry in the DB": true
+				}
+			]
+		},
+		{
+			"id": "933b7339-3595-41f4-b7c3-5019de845053",
+			"name": "Get Single Non-Existing exp",
+			"url": "http://localhost:8080/experience/?id=1",
+			"time": 812,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Error: The experience with the entered ID is not found in the DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error: The experience with the entered ID is not found in the DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				812
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Error: The experience with the entered ID is not found in the DB": true
+				}
+			]
+		},
+		{
+			"id": "4902ac24-4770-44ec-b6aa-da062e981ae4",
+			"name": "Get Single Existing exp",
+			"url": "http://localhost:8080/experience/?id=30",
+			"time": 1061,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1061
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "fd7c87ec-2d97-48a3-8db4-ccc099697dda",
+			"name": "Get Experience By Name",
+			"url": "http://localhost:8080/experience/experienceName?expName=Patagonia",
+			"time": 499,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				499
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "4e568b8d-c4e2-4bb3-9b2d-367155be68ad",
+			"name": "Get Exp Non-Existing Name",
+			"url": "http://localhost:8080/experience/experienceName?expName=Nunca%20Jamas",
+			"time": 408,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Error: The experience with the entered name is not found in the DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error: The experience with the entered name is not found in the DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				408
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Error: The experience with the entered name is not found in the DB": true
+				}
+			]
+		},
+		{
+			"id": "9e77c1cb-53b0-438a-8c51-c0cde463c1fc",
+			"name": "Get Experience By Slug",
+			"url": "http://localhost:8080/experience/experienceSlug?slug=playa-del-carmen",
+			"time": 332,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"There is at least one data entry in the DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"There is at least one data entry in the DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				332
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"There is at least one data entry in the DB": true
+				}
+			]
+		},
+		{
+			"id": "74a0b51d-d356-453c-956e-d3d1a9f6c962",
+			"name": "Get All Paginated",
+			"url": "http://localhost:8080/experience/allPaginated",
+			"time": 1425,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"There is at least one data entry in the DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"There is at least one data entry in the DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1425
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"There is at least one data entry in the DB": true
+				}
+			]
+		},
+		{
+			"id": "2a103bea-1d01-4689-8725-c33f57a321e4",
+			"name": "Add Exp with Existing Name",
+			"url": "http://localhost:8080/experience",
+			"time": 669,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"Error: The name of the experience is already in the DB": true,
+				"Response time is less than 800ms": true
+			},
+			"testPassFailCounts": {
+				"Error: The name of the experience is already in the DB": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 800ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				669
+			],
+			"allTests": [
+				{
+					"Error: The name of the experience is already in the DB": true,
+					"Response time is less than 800ms": true
+				}
+			]
+		},
+		{
+			"id": "aee20ce8-f39e-40d1-ab0d-e9e30e4a4789",
+			"name": "Delete Non-Existing Exp",
+			"url": "http://localhost:8080/experience/delete?id=47",
+			"time": 651,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 500": true,
+				"Response time is less than 800ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 800ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				651
+			],
+			"allTests": [
+				{
+					"Status code is 500": true,
+					"Response time is less than 800ms": true
+				}
+			]
+		},
+		{
+			"id": "0762604f-8a96-4978-a0ec-adca5df2e3a2",
+			"name": "Add Existing Admin Account",
+			"url": "http://localhost:8080/users/addNewUser",
+			"time": 378,
+			"responseCode": {
+				"code": 409,
+				"name": "Conflict"
+			},
+			"tests": {
+				"The e-mail is already registered in DB": true,
+				"Response time is less than 800ms": true
+			},
+			"testPassFailCounts": {
+				"The e-mail is already registered in DB": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 800ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				378
+			],
+			"allTests": [
+				{
+					"The e-mail is already registered in DB": true,
+					"Response time is less than 800ms": true
+				}
+			]
+		},
+		{
+			"id": "a0528f7b-d8ed-49bc-bd5e-7fd204de6519",
+			"name": "Add User",
+			"url": "http://localhost:8080/users/addNewUser",
+			"time": 2713,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"User was successfully created": true,
+				"Response time is less than 800ms": false
+			},
+			"testPassFailCounts": {
+				"User was successfully created": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 800ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				2713
+			],
+			"allTests": [
+				{
+					"User was successfully created": true,
+					"Response time is less than 800ms": false
+				}
+			]
+		},
+		{
+			"id": "4aaa73e9-9c70-4131-b127-b548e0140083",
+			"name": "GetByUserName",
+			"url": "http://localhost:8080/users/user?email=matias.dilisa@gmail.com",
+			"time": 659,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				659
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "88069593-01cc-4c04-9b6a-6d7318f383dc",
+			"name": "GetAllUsers",
+			"url": "http://localhost:8080/users/all",
+			"time": 687,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 200": false,
+				"There is at least one data entry in the DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 0,
+					"fail": 1
+				},
+				"There is at least one data entry in the DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				687
+			],
+			"allTests": [
+				{
+					"Status code is 200": false,
+					"There is at least one data entry in the DB": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 11715,
+	"collection": {
+		"requests": [
+			{
+				"id": "eb718903-1808-47d1-ac3b-d05a1f5ca35d",
+				"method": "GET"
+			},
+			{
+				"id": "933b7339-3595-41f4-b7c3-5019de845053",
+				"method": "GET"
+			},
+			{
+				"id": "4902ac24-4770-44ec-b6aa-da062e981ae4",
+				"method": "GET"
+			},
+			{
+				"id": "fd7c87ec-2d97-48a3-8db4-ccc099697dda",
+				"method": "GET"
+			},
+			{
+				"id": "4e568b8d-c4e2-4bb3-9b2d-367155be68ad",
+				"method": "GET"
+			},
+			{
+				"id": "9e77c1cb-53b0-438a-8c51-c0cde463c1fc",
+				"method": "GET"
+			},
+			{
+				"id": "74a0b51d-d356-453c-956e-d3d1a9f6c962",
+				"method": "GET"
+			},
+			{
+				"id": "2a103bea-1d01-4689-8725-c33f57a321e4",
+				"method": "POST"
+			},
+			{
+				"id": "aee20ce8-f39e-40d1-ab0d-e9e30e4a4789",
+				"method": "DELETE"
+			},
+			{
+				"id": "0762604f-8a96-4978-a0ec-adca5df2e3a2",
+				"method": "POST"
+			},
+			{
+				"id": "a0528f7b-d8ed-49bc-bd5e-7fd204de6519",
+				"method": "POST"
+			},
+			{
+				"id": "4aaa73e9-9c70-4131-b127-b548e0140083",
+				"method": "GET"
+			},
+			{
+				"id": "88069593-01cc-4c04-9b6a-6d7318f383dc",
+				"method": "GET"
+			}
+		]
+	}
+}

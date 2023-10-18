@@ -1,0 +1,61 @@
+@import "../../styles/variables.scss";
+
+  .divContainer {
+    text-align: center;
+  
+    .btn {
+      width: 100%;
+      background-color: $Mind-green;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      
+
+    }
+  
+    .divCharacteristic {
+    
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 10px;
+      
+
+      @media screen and (max-width: $screen-mo) {
+        width: 100%;
+      }
+  
+      @media screen and (max-width: $screen-md) {
+        width: 100%;
+      }
+  
+
+
+       ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        list-style-type: none;
+        margin: 20px;
+        padding: 20px;
+        
+  
+         li {
+          display: flex;
+          align-items: center;
+          margin-right: 80px;
+          margin-bottom: 10px;
+         
+
+          img{
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  
+  

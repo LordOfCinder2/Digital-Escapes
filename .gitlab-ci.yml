@@ -1,0 +1,28 @@
+# .gitlab-ci.yml
+
+# Define stages for the pipeline
+stages:
+  - build_Backend
+  - build_Frontend
+# Define job for building the Maven application
+build_Backend:
+  stage: build_Backend
+  image: maven:latest  # Use the Maven Docker image
+  script:
+    - cd Backend/proyectointegrador  # Navigate to the project directory
+    - mvn clean install  # Run Maven clean and install commands
+  artifacts:
+    paths:
+      - Backend/proyectointegrador/target/*.jar  # Archive the generated JAR file as an artifact
+#http://ec2-3-142-42-229.us-east-2.compute.amazonaws.com:8080/
+# Define job for building the React Vite project
+build_Frontend:
+  stage: build_Frontend
+  image: node:latest  # Use the Node.js Docker image
+  script:
+    - cd Frontend/equipo10.front  # Navigate to the project directory
+    - npm install  # Install project dependencies
+    - npm run build  # Build the React Vite project
+  artifacts:
+    paths:
+      - Frontend/equipo10.front/dist/  # Archive the built project as an artifact

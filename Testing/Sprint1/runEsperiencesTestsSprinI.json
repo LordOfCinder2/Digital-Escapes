@@ -1,0 +1,339 @@
+{
+	"id": "584426f4-5ad1-4606-9eb9-7bccdf734b41",
+	"name": "Digital Escapes",
+	"timestamp": "2023-05-19T22:16:07.413Z",
+	"collection_id": "0-eb4b7665-f76b-46b0-b690-42016bcebd1d",
+	"folder_id": 0,
+	"environment_id": "6323ecb4-06f5-4b6f-9290-fb8a1b711238",
+	"totalPass": 15,
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "eb718903-1808-47d1-ac3b-d05a1f5ca35d",
+			"name": "All experiences",
+			"url": "http://localhost:8080/experience/all",
+			"time": 1007,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"There is at least one data entry in the DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"There is at least one data entry in the DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1007
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"There is at least one data entry in the DB": true
+				}
+			]
+		},
+		{
+			"id": "933b7339-3595-41f4-b7c3-5019de845053",
+			"name": "Get Single Non-Existing exp",
+			"url": "http://localhost:8080/experience/?id=1",
+			"time": 687,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Error: The experience with the entered ID is not found in the DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error: The experience with the entered ID is not found in the DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				687
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Error: The experience with the entered ID is not found in the DB": true
+				}
+			]
+		},
+		{
+			"id": "4902ac24-4770-44ec-b6aa-da062e981ae4",
+			"name": "Get Single Existing exp",
+			"url": "http://localhost:8080/experience/?id=30",
+			"time": 605,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				605
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "fd7c87ec-2d97-48a3-8db4-ccc099697dda",
+			"name": "Get Experience By Name",
+			"url": "http://localhost:8080/experience/experienceName?expName=Patagonia",
+			"time": 220,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				220
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "4e568b8d-c4e2-4bb3-9b2d-367155be68ad",
+			"name": "Get Exp Non-Existing Name",
+			"url": "http://localhost:8080/experience/experienceName?expName=Nunca%20Jamas",
+			"time": 95,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Error: The experience with the entered name is not found in the DB": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Error: The experience with the entered name is not found in the DB": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				95
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Error: The experience with the entered name is not found in the DB": true
+				}
+			]
+		},
+		{
+			"id": "3f29f4ba-35a7-465e-b418-1cb5c7ec3fc4",
+			"name": "Add Exp with New Name",
+			"url": "http://localhost:8080/experience",
+			"time": 497,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Response time is less than 500ms": false
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				497
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Response time is less than 500ms": false
+				}
+			]
+		},
+		{
+			"id": "2a103bea-1d01-4689-8725-c33f57a321e4",
+			"name": "Add Exp with Existing Name",
+			"url": "http://localhost:8080/experience",
+			"time": 381,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Error: The name of the experience is already in the DB": false,
+				"Response time is less than 500ms": true
+			},
+			"testPassFailCounts": {
+				"Error: The name of the experience is already in the DB": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				381
+			],
+			"allTests": [
+				{
+					"Error: The name of the experience is already in the DB": false,
+					"Response time is less than 500ms": true
+				}
+			]
+		},
+		{
+			"id": "03a30cb0-d02a-4ffd-bb74-54d51738404a",
+			"name": "Delete Experience",
+			"url": "http://localhost:8080/experience/delete?id=48",
+			"time": 482,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Experiencia eliminada de la BD": true,
+				"Response time is less than 700ms": true
+			},
+			"testPassFailCounts": {
+				"Experiencia eliminada de la BD": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 700ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				482
+			],
+			"allTests": [
+				{
+					"Experiencia eliminada de la BD": true,
+					"Response time is less than 700ms": true
+				}
+			]
+		},
+		{
+			"id": "aee20ce8-f39e-40d1-ab0d-e9e30e4a4789",
+			"name": "Delete Non-Existing Exp",
+			"url": "http://localhost:8080/experience/delete?id=47",
+			"time": 367,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status code is 500": true,
+				"Response time is less than 700ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 500": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 700ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				367
+			],
+			"allTests": [
+				{
+					"Status code is 500": true,
+					"Response time is less than 700ms": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4441,
+	"collection": {
+		"requests": [
+			{
+				"id": "eb718903-1808-47d1-ac3b-d05a1f5ca35d",
+				"method": "GET"
+			},
+			{
+				"id": "933b7339-3595-41f4-b7c3-5019de845053",
+				"method": "GET"
+			},
+			{
+				"id": "4902ac24-4770-44ec-b6aa-da062e981ae4",
+				"method": "GET"
+			},
+			{
+				"id": "fd7c87ec-2d97-48a3-8db4-ccc099697dda",
+				"method": "GET"
+			},
+			{
+				"id": "4e568b8d-c4e2-4bb3-9b2d-367155be68ad",
+				"method": "GET"
+			},
+			{
+				"id": "3f29f4ba-35a7-465e-b418-1cb5c7ec3fc4",
+				"method": "POST"
+			},
+			{
+				"id": "2a103bea-1d01-4689-8725-c33f57a321e4",
+				"method": "POST"
+			},
+			{
+				"id": "03a30cb0-d02a-4ffd-bb74-54d51738404a",
+				"method": "DELETE"
+			},
+			{
+				"id": "aee20ce8-f39e-40d1-ab0d-e9e30e4a4789",
+				"method": "DELETE"
+			}
+		]
+	}
+}

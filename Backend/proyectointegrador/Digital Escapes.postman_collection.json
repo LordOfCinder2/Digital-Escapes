@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "6f11b046-87bf-418e-ac61-27519b9099bd",
+		"name": "Digital Escapes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21694106"
+	},
+	"item": [
+		{
+			"name": "Experience",
+			"item": [
+				{
+					"name": "All experiences",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Experience}}/all",
+							"host": [
+								"{{Experience}}"
+							],
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Experience",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Experiencia2\",\r\n    \"description\":\"Descripcion\",\r\n    \"price\": 10000,\r\n    \"imgUrl\": \"img/Url\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Experience}}",
+							"host": [
+								"{{Experience}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Experience",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Experience}}/delete/2",
+							"host": [
+								"{{Experience}}"
+							],
+							"path": [
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Experience",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Experience}}/?id=1",
+							"host": [
+								"{{Experience}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Experience By Name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Experience}}/experienceName?expName=Experiencia2",
+							"host": [
+								"{{Experience}}"
+							],
+							"path": [
+								"experienceName"
+							],
+							"query": [
+								{
+									"key": "expName",
+									"value": "Experiencia2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"matias\",\r\n    \"username\": \"matias123\",\r\n    \"email\": \"matias@email\",\r\n    \"password\": \"123456\",\r\n    \"apiUserRoles\": \"ADMIN\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Users}}/postuser",
+							"host": [
+								"{{Users}}"
+							],
+							"path": [
+								"postuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByUserName",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Users}}/user?userName=matias123",
+							"host": [
+								"{{Users}}"
+							],
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "matias123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Users}}/all",
+							"host": [
+								"{{Users}}"
+							],
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Users}}/delete?id=1",
+							"host": [
+								"{{Users}}"
+							],
+							"path": [
+								"delete"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get All Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Categories}}/all",
+							"host": [
+								"{{Categories}}"
+							],
+							"path": [
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
